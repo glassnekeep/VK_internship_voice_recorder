@@ -14,4 +14,7 @@
     <string name="recording_finished">Запись сохранена</string>
     <string name="recording_started">Запись началась</string>
     <string name="permission_required_for_recording">Нужно разрешение для записи</string>
+    <string name="save">Сохранить</string>
+    <string name="enter_recording_name">Введите название записи:</string>
+    <string name="recording_name">Название записи</string>
 </resources>

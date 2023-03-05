@@ -20,12 +20,12 @@ class RecordViewHolder(
             recordName.text = record.name
             val time = record.time
             date.text = String.format("%02d:%02d:%02d",
-                TimeUnit.MILLISECONDS.toHours(time) % 60,
+                TimeUnit.MILLISECONDS.toHours(time) % 24,
                 TimeUnit.MILLISECONDS.toMinutes(time) % 60,
                 TimeUnit.MILLISECONDS.toSeconds(time) % 60)
             val recordLength = record.length
             length.text = String.format("%02d:%02d:%02d",
-                TimeUnit.MILLISECONDS.toHours(recordLength) % 60,
+                TimeUnit.MILLISECONDS.toHours(recordLength) % 24,
                 TimeUnit.MILLISECONDS.toMinutes(recordLength) % 60,
                 TimeUnit.MILLISECONDS.toSeconds(recordLength) % 60)
             play.setOnClickListener {

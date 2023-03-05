@@ -19,9 +19,10 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            android:maxWidth="200dp"
+            android:ellipsize="end"
             android:textAppearance="@style/title"
-            android:maxLines="1"
-            android:text="Поход к адвокату" />
+            android:maxLines="1" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/date"
@@ -29,8 +30,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/record_name"
             app:layout_constraintStart_toStartOf="@id/record_name"
-            android:textAppearance="@style/body"
-            android:text="Сегодня в 15:32" />
+            android:textAppearance="@style/body" />
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/play"
@@ -48,7 +48,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxLines="2"
-            android:text="2:18/5:32"
             android:textAppearance="@style/body"
             android:layout_marginHorizontal="@dimen/very_small_margin"
             app:layout_constraintTop_toTopOf="parent"
