@@ -137,8 +137,15 @@ class RecordListViewModel @Inject constructor(
         player.prepare(mediaSource)
         player.playWhenReady = playWhenReady
         player.seekTo(contentPosition)
-
-        this._player.value = player
+        val listener = object: Player.Listener {
+            override fun onPlaybackStateChanged(playbackState: Int) {
+                if (playbackState == Player.STATE_ENDED) {
+                    _records.value = _records.value
+                }
+            }
+        }
+        player.addListener(listener)
+        _player.value = player
     }
 
     private fun releasePlayer() {

@@ -15,6 +15,8 @@ class RecordViewHolder(
         with(binding) {
             val record = item.first
             val isPlaying = item.second
+            val background = if (isPlaying) R.drawable.circle_gray else R.drawable.circle_blue
+            binding.play.setBackgroundResource(background)
             recordName.text = record.name
             val time = record.time
             date.text = String.format("%02d:%02d:%02d",
@@ -40,7 +42,7 @@ class RecordViewHolder(
             handler.postDelayed({
                 val resource = if (isPlaying) R.drawable.animated_play_to_pause else R.drawable.animated_pause_to_play
                 setImageResource(resource)
-                val background = if (isPlaying) R.drawable.circle_blue else R.drawable.circle_gray
+                val background = if (isPlaying) R.drawable.circle_gray else R.drawable.circle_blue
                 setBackgroundResource(background)
             }, 500L)
         }
