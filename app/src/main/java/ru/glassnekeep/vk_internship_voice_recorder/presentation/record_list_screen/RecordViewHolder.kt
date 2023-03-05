@@ -42,7 +42,7 @@ class RecordViewHolder(
             handler.postDelayed({
                 val resource = if (isPlaying) R.drawable.animated_play_to_pause else R.drawable.animated_pause_to_play
                 setImageResource(resource)
-                val background = if (isPlaying) R.drawable.circle_gray else R.drawable.circle_blue
+                val background = if (isPlaying) R.drawable.circle_blue else R.drawable.circle_gray
                 setBackgroundResource(background)
             }, 500L)
         }
