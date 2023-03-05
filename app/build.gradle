@@ -1,16 +1,17 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
     namespace 'ru.glassnekeep.vk_internship_voice_recorder'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "ru.glassnekeep.vk_internship_voice_recorder"
         minSdk 24
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -30,9 +31,17 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
+    def dagger_version = "2.45"
+    def room_version = "2.5.0"
+    def exoplayer_version = "2.18.3"
+    def lifecycle_version = "2.2.0"
+    def fragment_version = "1.5.5"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
@@ -41,4 +50,23 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //Fragment-ktx
+    implementation "androidx.fragment:fragment-ktx:$fragment_version"
+
+    //Dagger
+    implementation "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+
+    //Room
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    //Exo player
+    implementation "com.google.android.exoplayer:exoplayer-core:$exoplayer_version"
+    implementation "com.google.android.exoplayer:exoplayer-ui:$exoplayer_version"
+
+    //Lifecycle
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
 }
